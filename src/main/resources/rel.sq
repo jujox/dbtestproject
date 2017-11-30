@@ -1,0 +1,23 @@
+drop table Book_Categories;
+drop table Book;
+drop table Category;
+
+create table Book (id int(10) primary key, title varchar(200));
+
+create table Category(id int(10) primary key, cat_name varchar(200));
+
+create table Book_Categories(id_book int(10), id_category int(10),
+				foreign key (id_book) references Book(id),
+				foreign key (id_category) references Category(id));
+
+insert into Category  values (1, 'Cat 1');
+insert into Category  values (2, 'Cat 2');
+insert into Category  values (3, 'Cat 3');
+insert into Category  values (4, 'Cat 4');
+insert into Category  values (5, 'Cat 5');
+insert into Category  values (6, 'Cat 6');
+
+
+select * from Book;
+Select * from Category;
+select * from Book_Categories;
